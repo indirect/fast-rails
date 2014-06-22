@@ -1,0 +1,4 @@
+#!/bin/bash
+gem list -i bundler > /dev/null || gem install bundler
+bundle install --standalone --path .bundle --jobs 0
+bin/rake db:create db:schema:load db:seed
